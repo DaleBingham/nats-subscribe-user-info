@@ -11,3 +11,4 @@ An example of a publisher for the NATS message queue consuming user information.
 * running `dotnet add package NATS.Client` to add the package
 * dotnet restore to pull in all required libraries
 * The C# NATS client library available at https://github.com/nats-io/csharp-nats
+* The image at https://hub.docker.com/_/nats/

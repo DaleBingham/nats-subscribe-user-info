@@ -2,6 +2,7 @@
 using NATS.Client;
 using System.Text;
 using Newtonsoft.Json;
+using nats_subscribe_user_info.Models;
 
 namespace nats_subscribe_user_info
 {
@@ -22,7 +23,8 @@ namespace nats_subscribe_user_info
             EventHandler<MsgHandlerEventArgs> h = (sender, natsargs) =>
             {
                 // print the message
-                Console.WriteLine(natsargs.Message);
+                Console.WriteLine(Encoding.UTF8.GetString(natsargs.Message.Data));
+                // User u = JsonConvert.DeserializeObject<User>(Encoding.UTF8.GetString(natsargs.Message.Data));
 
                 // Here are some of the accessible properties from
                 // the message:
